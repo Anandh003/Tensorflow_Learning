@@ -1,0 +1,29 @@
+# environments
+.env
+.venv
+py3/
+venv/
+env/
+ENV/
+
+
+
+# build folders
+build/
+dist/
+
+# compailed files
+*.pyc
+__pycache__/
+__pypackages__/
+
+# temp files
+.vscode
+
+*.spec
+*.manifest
+.Python
+docs/_build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
