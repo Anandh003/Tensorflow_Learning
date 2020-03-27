@@ -18,14 +18,22 @@
 #     print('Variable a is {}'.format(a_out))
 
 # Simple Neural Network
-
+import numpy as np
 import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
 
+(x_train, y_train), (x_test, y_test) = tf.keras.datasets.mnist.load_data()
 
-mnist = input_data.read_data_sets('MNIST_data/', one_hot=True)
+train_x = (x_train / 255).flatten().reshape(
+                                        x_train.shape[0],
+                                        x_train.shape[1] * x_train.shape[2]
+                                        )
+test_x = (x_test / 255).flatten().reshape(
+                                        x_test.shape[0],
+                                        x_test.shape[1] * x_test.shape[2]
+                                        )
 
-print(mnist)
+train_y = np.eye(10)[y_train.reshape(-1)]
+test_y = np.eye(10)[y_test.reshape(-1)]
 
 learning_rate = 0.001
 epochs = 100
